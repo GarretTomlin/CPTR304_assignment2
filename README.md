@@ -28,6 +28,11 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
  php -S localhost:8000
 ```
 
+
+## Figma Design
+
+Figma [Course Ecommerce](https://dribbble.com/shots/18541284-eCommerce-Academy-Explorations)
+
 ## Frontend UI Library
 
 Docs [Shadcn UI](https://ui.shadcn.com/)
