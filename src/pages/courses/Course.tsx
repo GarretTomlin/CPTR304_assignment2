@@ -1,12 +1,14 @@
+import Footer from "@/layout/footer";
 import Navbar from "@/layout/navbar";
 import React from "react";
 
-function course() {
+function Course() {
   return (
     <div>
       <Navbar />
+      <Footer/>
     </div>
   );
 }
 
-export default course;
+export default Course;

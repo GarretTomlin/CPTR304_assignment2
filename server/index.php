@@ -77,7 +77,7 @@ function handleRegistration($data) {
         'password' => $password,
     ]);
 
-    return ["status" => "success", "code" => 0, "message" => "Registration successful"];
+    return ["status" => "success", "code" => 201, "message" => "Registration successful"];
 }
 
 try {
@@ -89,7 +89,7 @@ try {
         } elseif (isset($data['action']) && $data['action'] === 'register') {
             $response = handleRegistration($data);
         } else {
-            $response = ["status" => "error", "code" => 5, "message" => "Invalid action"];
+            $response = ["status" => "error", "code" => 500, "message" => "Invalid action"];
         }
 
         echo json_encode($response);
