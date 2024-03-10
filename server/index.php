@@ -4,7 +4,7 @@ header("Content-Type: application/json");
 session_start();
 
 function getUserData($username) {
-    $userData = file_get_contents("users.txt");
+    $userData = file_get_contents("register.txt");
     $users = explode("\n", $userData);
 
     foreach ($users as $user) {
@@ -26,7 +26,7 @@ function saveUserData($userData) {
         'password' => password_hash($userData['password'], PASSWORD_DEFAULT),
     ];
 
-    file_put_contents("users.txt", json_encode($userArray) . "\n", FILE_APPEND);
+    file_put_contents("register.txt", json_encode($userArray) . "\n", FILE_APPEND);
 }
 
 function handleLogin($data) {
@@ -39,7 +39,7 @@ function handleLogin($data) {
 
     $userData = getUserData($username);
 
-    if ($userData && password_verify($password, $userData['password'])) {
+    if ($userData && hash_equals($userData['password'], crypt($password, $userData['password']))) {
         $_SESSION["username"] = $username;
         return ["status" => "success", "code" => 0, "message" => "Login successful"];
     } else {
@@ -48,7 +48,7 @@ function handleLogin($data) {
 }
 
 function handleRegistration($data) {
-    if (empty($data['firstname']) || empty($data['lastname']) || empty($data['email']) || empty($data['username']) || empty($data['password']) || empty($data['password_confirmation'])) {
+    if (empty($data['firstname']) || empty($data['lastname']) || empty($data['email']) || empty($data['username']) || empty($data['password'])) {
         return ["status" => "error", "code" => 1, "message" => "Please fill in all fields"];
     }
 
@@ -57,12 +57,9 @@ function handleRegistration($data) {
     $email = filter_var($data['email'], FILTER_VALIDATE_EMAIL);
     $username = filter_var($data['username'], FILTER_SANITIZE_STRING);
     $password = filter_var($data['password'], FILTER_SANITIZE_STRING);
-    $password_confirmation = filter_var($data['password_confirmation'], FILTER_SANITIZE_STRING);
 
     if (strlen($password) < 8) {
         return ["status" => "error", "code" => 2, "message" => "Password should be at least 8 characters"];
-    } elseif ($password !== $password_confirmation) {
-        return ["status" => "error", "code" => 3, "message" => "Password and confirmation do not match"];
     }
 
     if (getUserData($username)) {

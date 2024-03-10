@@ -42,7 +42,6 @@ export function UserRegisterForm({ className, ...props }: UserAuthFormProps) {
                         <Input
                             id="lastname"
                             placeholder="Tomlin"
-                            type="email"
                             autoCorrect="off"
                             disabled={isLoading}
                         />
