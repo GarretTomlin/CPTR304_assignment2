@@ -83,7 +83,22 @@ export default function Footer() {
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
                 <Link href={"/"} className="text-gray-300">
-                Jimmy Kim
+                Garett Tomlin
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="text-gray-300">
+                Joshua Daniel
+               </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="text-gray-300">
+           Kevaughn Benjamin 
+            </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="text-gray-300">
+                Michael Small
                 </Link>
               </li>
             </ul>
