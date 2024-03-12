@@ -7,43 +7,64 @@ import { Button } from "./ui/button"
 import { Label } from "./ui/label"
 import { Icons } from "./icons"
 import { Input } from "./ui/input"
-
+import { useForm } from "react-hook-form"
+import axios from "axios"
+import { useRouter } from 'next/navigation'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export function UserRegisterForm({ className, ...props }: UserAuthFormProps) {
-    const [isLoading, setIsLoading] = React.useState<boolean>(false)
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const [isLoading, setIsLoading] = React.useState<boolean>(false);
+    const router = useRouter()
+    const onSubmit = async (data: any) => {
+        console.log("Form data:", data);
+        setIsLoading(true);
 
-    async function onSubmit(event: React.SyntheticEvent) {
-        event.preventDefault()
-        setIsLoading(true)
+        try {
+            const response = await axios.post("http://localhost:8000/index.php", {
+                action: "register",
+                ...data,
+            });
+            if (response.status == 201){
+                router.push('/Login')
+            }
 
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 3000)
-    }
+            setIsLoading(false);
+        } catch (error) {
+            console.error("API Error:", error);
+
+            setIsLoading(false);
+        }
+    };
 
     return (
         <div className={cn("grid gap-6", className)} {...props}>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid gap-2">
                     <div className="grid gap-2">
-                        <Label className="sr-only" htmlFor="email">
+                        <Label className="sr-only">
                             First Name
                         </Label>
                         <Input
-                            id="name"
+                            id="firstname"
                             placeholder="Garret"
                             autoCorrect="off"
                             disabled={isLoading}
+                            {...register("firstname", { required: true })}
                         />
-                        <Label className="sr-only" htmlFor="email">
+                        <Label className="sr-only">
                             Last Name            </Label>
                         <Input
                             id="lastname"
                             placeholder="Tomlin"
                             autoCorrect="off"
                             disabled={isLoading}
+                            {...register("lastname", { required: true })}
                         />
                         <Label className="sr-only" htmlFor="email">
                             Email
@@ -55,9 +76,20 @@ export function UserRegisterForm({ className, ...props }: UserAuthFormProps) {
                             autoCapitalize="none"
                             autoComplete="email"
                             autoCorrect="off"
+                            {...register("email", { required: true })}
                             disabled={isLoading}
                         />
-                        <Label className="sr-only" htmlFor="email">
+                        <Label className="sr-only">
+                            username
+                        </Label>
+                        <Input
+                            id="username"
+                            placeholder="naruto"
+                            autoCapitalize="none"
+                            {...register("username", { required: true })}
+                            disabled={isLoading}
+                        />
+                        <Label className="sr-only">
                             password
                         </Label>
                         <Input
@@ -67,12 +99,10 @@ export function UserRegisterForm({ className, ...props }: UserAuthFormProps) {
                             autoCapitalize="none"
                             autoComplete="password"
                             disabled={isLoading}
+                            {...register("password", { required: true })}
                         />
                     </div>
-                    <Button disabled={isLoading} className="bg-lime-700  hover:bg-lime-400">
-                        {isLoading && (
-                            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                        )}
+                    <Button className="bg-lime-700  hover:bg-lime-400" type="submit">
                         Sign In with Email
                     </Button>
                 </div>
@@ -87,7 +117,7 @@ export function UserRegisterForm({ className, ...props }: UserAuthFormProps) {
                     </span>
                 </div>
             </div>
-            <Button variant="outline" type="button" disabled={isLoading}>
+            <Button variant="outline" disabled={isLoading} >
                 {isLoading ? (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
