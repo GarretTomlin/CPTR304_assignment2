@@ -161,21 +161,6 @@ const TwoColumnLayout2: React.FC = () => {
     </div>
   );
 };
-const TwoColumnLayout_2: React.FC = () => {
-  return (
-    <div className="container22">
-      {/* Left Column */}
-      <div className="left-column">
-        <h1>Test</h1>
-      </div>
-      {/* Right Column */}
-      <div className="right-column">
-      <h1>Test</h1>
-      </div>
-    </div>
-  );
-};
-
 const FiveColumnLayout: React.FC = () => {
   return (
     <div className="container">
@@ -300,7 +285,6 @@ function course() {
           <h1 className='TwoColumnLayouttext'>Cohorts Starting From:</h1>
           <h1 className='TwoColumnLayouttext'>March 1, 2024</h1>
           <br/>
-          <TwoColumnLayout_2 />
           <h1 className='TwoColumnLayouttext'>Details</h1>
         </div>
         <br/>
