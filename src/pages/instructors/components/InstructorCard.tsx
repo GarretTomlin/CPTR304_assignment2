@@ -80,7 +80,7 @@ const InstructorCard: React.FC<InstructorCardProps> = ({
               </div>
               <div>
                 <CardContent>
-                  <Button className="text-white mt-12 ml-8 text-2xl">
+                  <Button className="text-white mt-12 ml-8 text-2xl rounded-[10px]">
                     
                     Enroll Now 
                   <ArrowRight className="text-white ml-4" />
@@ -99,18 +99,18 @@ const InstructorCard: React.FC<InstructorCardProps> = ({
               <div>
                 <CardHeader>
                   <CardTitle className="text-white text-sm">
-                    Course available
+                    Course Available
                   </CardTitle>
                   <div>
                     <CardTitle className="text-white text-4xl">
-                      Email Marketing
+                    SMS Marketing
                     </CardTitle>
                   </div>
                 </CardHeader>
               </div>
               <div>
                 <CardContent>
-                  <Button className="text-white mt-12 ml-8 text-2xl">
+                  <Button className="text-white mt-12 ml-12 text-2xl rounded-[10px]">
                     
                     Enroll Now 
                   <ArrowRight className="text-white ml-4" />
@@ -129,18 +129,18 @@ const InstructorCard: React.FC<InstructorCardProps> = ({
               <div>
                 <CardHeader>
                   <CardTitle className="text-white text-sm">
-                    Course available
+                    Course Available
                   </CardTitle>
                   <div>
                     <CardTitle className="text-white text-4xl">
-                      Email Marketing
+                    Reviews
                     </CardTitle>
                   </div>
                 </CardHeader>
               </div>
               <div>
                 <CardContent>
-                  <Button className="text-white mt-12 ml-8 text-2xl">
+                  <Button className="text-white mt-12 ml-[165px] text-2xl rounded-[10px]">
                     
                     Enroll Now 
                   <ArrowRight className="text-white ml-4" />

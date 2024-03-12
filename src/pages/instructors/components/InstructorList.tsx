@@ -15,44 +15,8 @@ interface Instructor {
 function InstructorList() {
     const instructors: Instructor[] = [
         {
-            instructorName: 'Garett Tomlin',
+            instructorName: 'Jimmy Kim',
             title: 'Web Designer',
-            social: ['facebook', 'github'],
-            badges: ['Beginners', '1.5 hours', 'Certificate of Completion'], // Example badges
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum ',
-             // Example description
-            courseprev: ['Course 1', 'Course 2'], // Example courses
-            imageSrc: '/jimmy.png',
-            buttonText: 'Learn More'
-        },
-
-        {
-            instructorName: 'Joshua Daniel',
-            title: 'Digital Marketer',
-            social: ['facebook', 'github'],
-            badges: ['Beginners', '1.5 hours', 'Certificate of Completion'], // Example badges
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum ',
-             // Example description
-            courseprev: ['Course 1', 'Course 2'], // Example courses
-            imageSrc: '/jimmy.png',
-            buttonText: 'Learn More'
-        },
-
-        {
-            instructorName: 'Kevon Bejamin',
-            title: 'Full Stack Developer',
-            social: ['facebook', 'github'],
-            badges: ['Beginners', '1.5 hours', 'Certificate of Completion'], // Example badges
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum ',
-             // Example description
-            courseprev: ['Course 1', 'Course 2'], // Example courses
-            imageSrc: '/jimmy.png',
-            buttonText: 'Learn More'
-        },
-
-        {
-            instructorName: 'Michael Small',
-            title: 'Web Developer',
             social: ['facebook', 'github'],
             badges: ['Beginners', '1.5 hours', 'Certificate of Completion'], // Example badges
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum ',
