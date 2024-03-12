@@ -249,62 +249,6 @@ const TwoColumnLayout: React.FC = () => {
   );
 };
 
-function course() {
-  return (
-    <div>
-      <Navbar />
-      <div className="top_sec_1">
-        <span className='top_sec_1_name'>
-          <p>Professional Diplomas with</p>
-          <p>Ecommerce Academy</p>
-            <hr className="horizontal-line" />
-        </span>
-        <span className='top_sec_1_para'>
-          <p style={{ marginTop: '50px' }}>At Ecommerce Academy, we empower learners to expand their knowledge of the concepts, skills</p>
-          <br/>
-          <p>and techniques through expertly crafted courses designed to foster growth, development, and</p>
-          <br/>
-          <p>confidence.</p>
-          </span>
-          <ul className='top_sec_1_buttons'>
-            <li><Button onClick={scrollToBottom} size={"lg"} className="bg-lime-700">Enroll</Button></li>
-            <Link href='/about/About'>
-            <li><Button size={"lg"} className="bg-lime-700" >Learn More...</Button></li>
-            </Link>
-          </ul>
-          <hr className="horizontal-line" />
-      </div>
-      <div className="mid_sec_1">
-        <br/>
-        <h1 className="mid_header">Stand Out With Our Univeristy-Rated Certification</h1>
-        <br/>
-        <ThreeColumnLayout />
-        <br/>
-        <TwoColumnLayout2 />
-        <div>
-          <h1 className='TwoColumnLayouttext'>Cohorts Starting From:</h1>
-          <h1 className='TwoColumnLayouttext'>March 1, 2024</h1>
-          <br/>
-          <h1 className='TwoColumnLayouttext'>Details</h1>
-        </div>
-        <br/>
-        <ul>
-          <li><h1 className='left5text'>How Our Courses Work</h1></li>
-          <li><h1 className='right5text'>Applications</h1></li>
-        </ul>
-        <FiveColumnLayout />
-        <br/>
-        <h1 className='TwoColumnLayouttext'>Still Having Questions?</h1>
-        <TwoColumnLayout />
-        <hr className="horizontal-line" />
-      </div>
-      <div className="bottom_sec_1">
-        <CourseCarousel />
-      </div>
-      <footer id="coursefooter"></footer>
-    </div>
-  );
-}
 export function CourseCarousel() {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
@@ -454,3 +398,4 @@ export function CourseCarousel() {
 )
 }
 export default course;
+

@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #1E1E1E;
   }
 }
 
@@ -188,3 +188,57 @@
   justify-content: flex-end;
   padding-right: 19.5%;
 }
+=======
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px;
+}
+
+.left {
+  flex-basis: 60%;
+  color: white;
+  max-width: 360px;
+  margin-bottom: 40px;
+  margin-left: 5%;
+  text-align: left;
+}
+
+.right {
+  flex-basis: 60%;
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.testimony {
+  background-color: lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  margin: 100px;
+}
+
+.testimony-text {
+  flex: 40%;
+  padding-right: 20px;
+}
+
+.testimony-image {
+  flex: 20%;
+}
+
+.testimony-image img {
+  max-width: 100%;
+  height: 50%;
+}
+
