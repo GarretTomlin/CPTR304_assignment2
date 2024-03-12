@@ -42,7 +42,7 @@ function scrollToBottom() {
   }
 }
 function handleViewDetailsClick() {
-  alert("View Details button clicked!");
+  alert("View Detail button clicked!");
 }
 export function AccordionDemo1() {
   return (
