@@ -1,2 +1,3 @@
 Garret,Tomlin,garret@edufocal.com,Gar,$2y$10$1PXf/ysdiMCVz1e2jdu.p.WcPLcxjTRuobWjP0ZD9WuwUwBr7Scoq
 Garret,Tomlin,garrettomlin.code@gmail.com,garre,$2y$10$WIXuc9MWtxg.cjMwXXaCi.Foeam6P77hgV2ceB3pEpEqXlyd3Brda
+Garret,Tomlin,garret@edufocal.com,naruto,$2y$10$yd0XOM1a0a/ld3w4UOpEBOvz3N8ZkLz.UZCvxhlMJRNf6r0I9QjLW
