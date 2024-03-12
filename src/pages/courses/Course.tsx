@@ -2,7 +2,10 @@ import Navbar from '@/layout/navbar';
 import * as React from 'react';
 import '@/app/globals.css';
 import Link from 'next/link';
-import dipImage from './pages/courses/ImgsC/diploma_g2.jpeg';
+import dipImage from './ImgsC/diploma_g.jpeg'
+import dipImage2 from './ImgsC/feedback2.jpeg'
+import dipImage1 from './ImgsC/software.jpeg'
+import dipImage3 from './ImgsC/mentor.jpeg'
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -41,27 +44,37 @@ function scrollToBottom() {
 function handleViewDetailsClick() {
   alert("View Details button clicked!");
 }
+export function AccordionDemo1() {
+  return (
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What programs does your university offer?</AccordionTrigger>
+        <AccordionContent>
+        We offer a diverse range of programs spanning our various disciplines. View our courses for detailed information on specific programs.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>What are the admission requirements?</AccordionTrigger>
+        <AccordionContent>
+        Admission requirements vary depending on the program and level of study. Generally, applicants are evaluated based on academic performance, standardized test scores, letters of recommendation, personal statements, and sometimes interviews. 
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
 export function AccordionDemo() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>Are their available scholarships?</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+        Yes, we offer a variety of scholarships and financial aid options to eligible students. These include merit-based scholarships, need-based grants, athletic scholarships, and more. 
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionTrigger>Can I study part-time or online?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
+        We offer part-time and online programs across various disciplines to accommodate different learning preferences and lifestyles.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -71,23 +84,33 @@ export function AccordionDemo2() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>What support services are available for students?</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+          Yes. Our university provides a range of support services, including academic advising, career counseling, tutoring, mental health resources, disability services, and more.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionTrigger>What opportunities are there for student involvement?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+        There are plenty of opportunities for students to get involved, build leadership skills, and make lasting connections. We encourage students to engage in extracurricular activities from student government to academic clubs, community service initiatives, and cultural organizations.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
+    </Accordion>
+  )
+}
+export function AccordionDemo22() {
+  return (
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Does your university offer study abroad programs?</AccordionTrigger>
         <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
+          Yes, we believe in the importance of global education and offer a variety of study abroad programs in partnership with universities and institutions around the world. Providing students with the opportunity to immerse themselves in different cultures, gain international perspectives, and enhance their academic experience.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>How can I learn more about the university?</AccordionTrigger>
+        <AccordionContent>
+        We welcome prospective students and their families to visit our campus and learn more about what our university has to offer. Attend one of our virtual information sessions and feel free to explore our website, connect with us on social media, or reach out to our admissions team with any questions you may have. We're here to help you every step of the way!
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -118,46 +141,102 @@ const ThreeColumnLayout: React.FC = () => {
 };
 const TwoColumnLayout2: React.FC = () => {
   return (
-    <div className="container3">
+    <div className="container22">
       {/* Left Column */}
-      <div className="left-column">
-        <h2 className='font-bold'>Commitment:</h2>
-        <p>2 Sessions<br/>3 hours per Week</p>
+      <div className="left-column22">
+        <p>"The accreditation of our university played a pivotal role in<br/>
+        shaping my career journey. As I ventured into the realm of UX <br/>
+        design, having a university credit rating underscored the legitimacy<br/> 
+        and excellence of my qualifications. It signaled to employers that I<br/>
+        possessed a distinguished and reputable educational background, <br/>
+        setting me apart from candidates who had merely completed online <br/>
+        courses. This distinction has been instrumental in establishing my <br/>
+        credibility and advancing my career."</p>
+        <p className='font-bold'><br/>Sabrina Wintell<br/>Senior EA Consultant</p>
       </div>
       {/* Right Column */}
       <div className="right-column">
-      <img src={dipImage} alt="Example" />
+      <img className='dipimg' src={dipImage.src} alt="Example" />
       </div>
     </div>
   );
 };
+const TwoColumnLayout_2: React.FC = () => {
+  return (
+    <div className="container22">
+      {/* Left Column */}
+      <div className="left-column">
+        <h1>Test</h1>
+      </div>
+      {/* Right Column */}
+      <div className="right-column">
+      <h1>Test</h1>
+      </div>
+    </div>
+  );
+};
+
 const FiveColumnLayout: React.FC = () => {
   return (
     <div className="container">
       {/* Outer-Left Column */}
       <div className="outerleft-column">
-        <h2>Outer-Left Column</h2>
+      <img className="trip_Img"  src={dipImage1.src} alt="Example" />
+      <br/>
+      <hr className="horizontal-line2"/>
+        <h2 className='cardtitlec'>Professional Software and Tools</h2>
         <p>This is the content of the outer-left column.</p>
       </div>
       {/* Left Column */}
       <div className="left-column">
-        <h2>Left Column</h2>
+      <img className="trip_Img"  src={dipImage2.src} alt="Example" />
+      <br/>
+      <hr className="horizontal-line2"/>
+        <h2 className='cardtitlec'>24 Hour Feedback</h2>
+        <br/>
         <p>This is the content of the left column.</p>
       </div>
       {/* Middle Column */}
       <div className="middle-column">
-        <h2>Middle Column</h2>
+      <img className="trip_Img" src={dipImage3.src} alt="Example" />
+      <br/>
+      <hr className="horizontal-line2"/>
+        <h2 className='cardtitlec'>Guidance, Mentorship,<br/>and Community</h2>
         <p>This is the content of the middle column.</p>
       </div>
+      <div className="vertical-line"></div>
       {/* Right Column */}
       <div className="right-column">
-        <h2>Right Column</h2>
-        <p>This is the content of the right column.</p>
+        <div className='font-bold'>
+        <h2 className='cardtitlec'>Who Can Apply</h2>
+        </div>
+        <hr className="horizontal-line2"/><br/>
+        <ul className='litest'>
+          <li>Highschool Graduates or equivalent</li>
+          <li>University Graduates, 17-30 years old(All degrees accepted)</li>
+          <li>Minimum GPA of 3.0</li>
+          <li>Application Deadline: April 8, 2024</li>
+          <ul className='top_sec_1_buttons'>
+            <li><Button onClick={scrollToBottom} size={"lg"} className="bg-lime-700">Enroll</Button></li><br/>
+            <Link href='ContactPage'>
+            <li><Button size={"lg"} className="bg-lime-700" >Contact Us</Button></li>
+            </Link>
+          </ul>
+        </ul>
       </div>
       {/* Outer-Right Column */}
       <div className="outerright-column">
-        <h2>Outer-Left Column</h2>
-        <p>This is the content of the outer-right column.</p>
+      <div className='font-bold'>
+        <h2 className='cardtitlec'>Benefits</h2>
+      </div>
+        <hr className="horizontal-line2"/><br/>
+        <ul className='litest'>
+          <li>Paid Internship</li>
+          <li>Real-world Experience</li>
+          <li>Industry Exposure</li>
+          <li>Skill Development</li>
+          <li>Networking Opportunities</li>
+        </ul>
       </div>
     </div>
   );
@@ -165,6 +244,10 @@ const FiveColumnLayout: React.FC = () => {
 const TwoColumnLayout: React.FC = () => {
   return (
     <div className="container2">
+      {/* ORight Column */}
+      <div className="outerleft-column">
+      <AccordionDemo1 />
+      </div>
       {/* Left Column */}
       <div className="left-column">
         <AccordionDemo />
@@ -172,6 +255,10 @@ const TwoColumnLayout: React.FC = () => {
       {/* Right Column */}
       <div className="right-column">
       <AccordionDemo2 />
+      </div>
+      {/* ORight Column */}
+      <div className="outerright-column">
+      <AccordionDemo22 />
       </div>
     </div>
   );
@@ -204,11 +291,23 @@ function course() {
       </div>
       <div className="mid_sec_1">
         <br/>
+        <h1 className="mid_header">Stand Out With Our Univeristy-Rated Certification</h1>
+        <br/>
         <ThreeColumnLayout />
-        <h1>Stand Out With Our Univeristy Rated Certification</h1>
         <br/>
         <TwoColumnLayout2 />
+        <div>
+          <h1 className='TwoColumnLayouttext'>Cohorts Starting From:</h1>
+          <h1 className='TwoColumnLayouttext'>March 1, 2024</h1>
+          <br/>
+          <TwoColumnLayout_2 />
+          <h1 className='TwoColumnLayouttext'>Details</h1>
+        </div>
         <br/>
+        <ul>
+          <li><h1 className='left5text'>How Our Courses Work</h1></li>
+          <li><h1 className='right5text'>Applications</h1></li>
+        </ul>
         <FiveColumnLayout />
         <br/>
         <h1 className='TwoColumnLayouttext'>Still Having Questions?</h1>
@@ -222,7 +321,6 @@ function course() {
     </div>
   );
 }
-
 export function CourseCarousel() {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
