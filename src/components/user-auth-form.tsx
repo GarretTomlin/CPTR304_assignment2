@@ -7,38 +7,58 @@ import { Button } from "./ui/button"
 import { Label } from "./ui/label"
 import { Icons } from "./icons"
 import { Input } from "./ui/input"
+import { useForm } from "react-hook-form"
+import { useRouter } from 'next/navigation'
+import axios from "axios"
 
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+} = useForm();
+const [isLoading, setIsLoading] = React.useState<boolean>(false);
+const router = useRouter()
+const onSubmit = async (data: any) => {
+    console.log("Form data:", data);
+    setIsLoading(true);
 
-  async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
+    try {
+        const response = await axios.post("http://localhost:8000/index.php", {
+            action: "login",
+            ...data,
+          
+        }, {withCredentials: true});
+        if (response.status == 200){
+            router.push('/Dashboard')
+        }
 
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
-  }
+        setIsLoading(false);
+    } catch (error) {
+        console.error("API Error:", error);
+
+        setIsLoading(false);
+    }
+};
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-      <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-2">
           <div className="grid gap-2">
-            <Label className="sr-only" htmlFor="email">
-              Email
+            <Label className="sr-only">
+              Username
             </Label>
             <Input
-              id="email"
+              id="username"
               placeholder="name@example.com"
-              type="email"
               autoCapitalize="none"
-              autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
+              {...register("username", { required: true })}
             />
                  <Label className="sr-only" htmlFor="email">
               password
@@ -50,12 +70,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCapitalize="none"
               autoComplete="password"
               disabled={isLoading}
+              {...register("password", { required: true })}
             />
           </div>
-          <Button disabled={isLoading} className="bg-lime-700  hover:bg-lime-400">
-            {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
+          <Button disabled={isLoading} className="bg-lime-700  hover:bg-lime-400" type="submit">
             Sign In with Email
           </Button>
         </div>
