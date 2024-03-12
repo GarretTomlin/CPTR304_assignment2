@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Start
 
 First, install dependencies then run the development server:
 

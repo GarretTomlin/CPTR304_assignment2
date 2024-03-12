@@ -75,6 +75,120 @@
   }
 }
 
+.top_sec_1 .top_sec_1_name{
+  font-size: 350%;
+  text-align: center;
+  color: green;
+  line-height: 1.15;
+}
+
+.top_sec_1 .top_sec_1_para{
+  line-height: .5;
+  text-align: center;
+}
+
+.top_sec_1 .top_sec_1_buttons{
+  text-align: center;
+  padding: 2.5%;
+  padding-left: 5%;
+  display: flex;
+  justify-content: center;
+}
+.top_sec_1 .top_sec_1_buttons li {
+  margin: 0 25px;
+}
+
+.horizontal-line {
+  text-align: center;
+  width:45%;
+  margin-left: 27.5%;
+  border-top: 1px solid #000; 
+}
+.horizontal-line2 {
+  text-align: center;
+  margin: 0  auto;
+  width:80%;
+  border-top: 1px solid #000; 
+}
+
+.bottom_sec_1 {
+  display: flex;
+  justify-content: center;
+}
+
+.cardtitlec{
+  color: green;
+}
+.container3{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.container22{
+  display: flex;
+  justify-content: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  padding-left: 7.5%;
+}
+.container2{
+  display: flex;
+  justify-content: center;
+
+}
+.TwoColumnLayouttext{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.left-column, .middle-column, .right-column, .outerright-column, .outerleft-column {
+  padding: 20px;
+}
+.left-column22 {
+  margin-top: 5%;
+  padding: 20px;
+  padding-right: 50px;
+}
+.dipimg{
+  display: flex;
+  width: 500px;
+  height: auto;
+  margin-left: 15%;
+  margin-bottom: 10%;
+}
+.vertical-line {
+  width: 1px;
+  background-color: #ccc;
+}
+.mid_header{
+  font-size: 350%;
+  text-align: center;
+  color: green;
+  line-height: 1.15;
+}
+.trip_Img{
+  height: 175px;
+  width: 200px;
+}
+.left5text,
+.right5text {
+  display: flex;
+}
+
+.left5text {
+  justify-content: flex-start;
+  padding-left: 28.5%;
+}
+.litest{
+  list-style-type: disc; /* Use bullets */
+}
+.right5text {
+  justify-content: flex-end;
+  padding-right: 19.5%;
+}
+=======
 .container {
   display: flex;
   justify-content: space-between;
